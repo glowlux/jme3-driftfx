@@ -131,11 +131,11 @@ dependencies {
  ```
  
  # Issues & Troubleshooting. 
- If JME is not rendering correctly... Set ``forceMainMemoryTransfer`` to ``true`` in the constructor of ``SimpleFXApplication``. 
+ If JME is not rendering correctly... Try setting ``forceMainMemoryTransfer`` to ``true`` in the constructor of ``SimpleFXApplication``. 
  
  Other rendering issues are likely due to hardware and drivers, check [DriftFX's known issues](https://github.com/eclipse-efx/efxclipse-drift#known-issues).
  
- Have issues with JME input? log an issue with as much as possible. Thank you soo much. 
+Having another issue? log an issue with as much information as possible. Thank you soo much. 
  
 # License 
 [License is MIT](https://github.com/glowlux/jme3-driftfx/blob/main/LICENSE)
