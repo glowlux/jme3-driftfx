@@ -150,9 +150,13 @@ dependencies {
  Other rendering issues are likely due to hardware and drivers, check [DriftFX's known issues](https://github.com/eclipse-efx/efxclipse-drift#known-issues).
  
 Having another issue? log an issue with as much information as possible. Thank you soo much. 
+
+### Known Issues
+n/a
  
 # License 
 [License is MIT](https://github.com/glowlux/jme3-driftfx/blob/main/LICENSE)
+
  
 
 
