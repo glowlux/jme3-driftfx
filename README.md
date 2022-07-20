@@ -115,17 +115,22 @@ run {
 ### Gradle
 ```gradle
 repositories {
+	maven {url 'https://repo.eclipse.org/content/groups/efxclipse'}
 	maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-	implementation 'com.github.glowlux:jme3-driftfx:main-SNAPSHOT'
+	implementation 'com.github.glowlux:jme3-driftfx:1.0.0'
 }
 ```
 
 ### Maven
 ```maven
 <repositories>
+	<repository>
+		<id>efxclipse</id>
+		<url>https://repo.eclipse.org/content/groups/efxclipse</url>
+	</repository>
 	<repository>
 		<id>jitpack.io</id>
 		<url>https://jitpack.io</url>
@@ -135,7 +140,7 @@ dependencies {
 <dependency>
 	<groupId>com.github.glowlux</groupId>
 	<artifactId>jme3-driftfx</artifactId>
-	<version>main-SNAPSHOT</version>
+	<version>1.0.0</version>
 </dependency>
  ```
  
