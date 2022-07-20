@@ -1,5 +1,5 @@
 plugins {
-    id 'java'
+    id 'java-library'
     id 'maven-publish'
     id 'org.openjfx.javafxplugin' version '0.0.10'
 }
@@ -24,9 +24,9 @@ dependencies {
     implementation "${jme3.g}:jme3-lwjgl3:${jme3.v}"
     runtimeOnly "${jme3.g}:jme3-testdata:${jme3.v}"
     runtimeOnly "${jme3.g}:jme3-plugins:${jme3.v}"
-    implementation "${jme3.g}:jme3-jogg:${jme3.v}"
+    runtimeOnly "${jme3.g}:jme3-jogg:${jme3.v}"
 
-    implementation "org.eclipse.fx:org.eclipse.fx.drift:1.0.0.rc4" transitive true
+    api "org.eclipse.fx:org.eclipse.fx.drift:1.0.0.rc4"
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
