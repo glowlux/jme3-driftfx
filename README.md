@@ -7,9 +7,11 @@ Great performance. Uses [DriftFX](https://github.com/eclipse-efx/efxclipse-drift
 ## Example
 ```java
 public class Example extends Application {
+    private DriftFXSurface driftFXSurface;
+
     @Override
     public void start(Stage stage) {
-        DriftFXSurface driftFXSurface = new DriftFXSurface(); // the node where JME is rendered.
+        driftFXSurface = new DriftFXSurface();
 
         BorderPane borderPane = new BorderPane();
         borderPane.setBackground(null);
@@ -30,6 +32,10 @@ public class Example extends Application {
 
     }
 
+    public static void main(String[] args) {
+        launch(Example.class, args);
+    }
+
     public class TestJME extends SimpleFXApplication {
         private Geometry boxGeom;
 
@@ -44,8 +50,11 @@ public class Example extends Application {
             flyCam.setEnabled(false); // disable the default flycam and replace it with a cam that does not lock the camera instantly.
             stateManager.attach(new RightClickCameraAppState());
 
-            boxGeom = new Geometry("Box", new Box(1, 1, 1));
-            boxGeom.setMaterial(assetManager.loadMaterial("Interface/Logo/Logo.j3m"));
+            Material mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+            mat.setColor("Color", ColorRGBA.Orange);
+            Box box = new Box(1, 1, 1);
+            boxGeom = new Geometry("Box", box);
+            boxGeom.setMaterial(mat);
             rootNode.attachChild(boxGeom);
         }
 
