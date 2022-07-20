@@ -14,9 +14,7 @@ sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
-    maven {
-        url = 'https://repo.eclipse.org/content/groups/efxclipse'
-    }
+    maven {url 'https://repo.eclipse.org/content/groups/efxclipse'}
 }
 
 def jme3 = [v:'3.4.0-stable', g:'org.jmonkeyengine']
@@ -28,7 +26,7 @@ dependencies {
     runtimeOnly "${jme3.g}:jme3-plugins:${jme3.v}"
     implementation "${jme3.g}:jme3-jogg:${jme3.v}"
 
-    implementation "org.eclipse.fx:org.eclipse.fx.drift:1.0.0.rc4"
+    implementation "org.eclipse.fx:org.eclipse.fx.drift:1.0.0.rc4" transitive true
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
