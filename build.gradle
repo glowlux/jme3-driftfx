@@ -1,21 +1,22 @@
 plugins {
     id 'java'
+    id 'maven-publish'
     id 'org.openjfx.javafxplugin' version '0.0.10'
 }
+javafx {
+    version = "17.0.1"
+    modules = [ 'javafx.controls' ]
+}
 
-group 'com.github.glowlux.driftjme'
+group 'com.github.glowlux'
 version '1.0.0'
+sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
     maven {
         url = 'https://repo.eclipse.org/content/groups/efxclipse'
     }
-}
-
-javafx {
-    version = "17.0.1"
-    modules = [ 'javafx.controls' ]
 }
 
 def jme3 = [v:'3.4.0-stable', g:'org.jmonkeyengine']
@@ -31,6 +32,14 @@ dependencies {
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
 }
 
 test {
