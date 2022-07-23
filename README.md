@@ -1,4 +1,17 @@
-# (WIP)
+# Broken - looking for help...
+I stopped work on this after I faced some difficult rendering problems that I couldn't solve. The current project works for unshaded scenes in JME, but everything else is problematic. Maybe someone who is more knowledgable of the OpenGL and JavaFX will be able to help resolve these issues. 
+
+![image](https://user-images.githubusercontent.com/24931661/180590774-22c6e495-7fd8-4c87-bdef-488e5cf5eee9.png)
+
+- Colours space seems to be wrong... but solid unshaded colours seem to be OK. Tried creating the OpenGL context with GLFW with the same window hints as windowed JME instead of relying on DriftFX, but no difference. Tried replacing DriftFX with [openglfx](https://github.com/husker-dev/openglfx), but the same issues persisted. Which leads me to believe this is likely a JME rendering issue, not an issue with DriftFX. 
+- JME post processing effects crash the application. 
+- With DriftFX, NV_DX_interop seems to flicker a lot, I'm led to believe this is a DriftFX issue however, as [openglfx](https://github.com/husker-dev/openglfx) doesn't suffer the same problem.
+
+If you have any ideas or can point me in the right direction, I'd love to hear from you, open an issue. 
+The aim of this project is render JME within a JavaFX application without having to transfer textures through main memory (as it degrades performance considerably).
+
+---
+
 # jme3-driftfx
 
 Embed JMonkeyEngine within a JavaFX application. Full support for keyboard and mouse events.  
